@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.Azure.Devices;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 
 namespace Azure_IoT_Service_SDK_Explorer.Views
 {

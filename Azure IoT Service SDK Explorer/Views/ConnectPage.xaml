@@ -5,14 +5,37 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    NavigationCacheMode="Required">
     <Grid
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+        <Grid Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="statusBorder" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Red" BorderThickness="3" Margin="0,0,0,6">
+                <Grid>
+                    <TextBlock x:Name="tbHubName" HorizontalAlignment="Left" Text="IotHubName = Unknown" FontWeight="Bold"/>
+                    <TextBlock x:Name="tbHostName" HorizontalAlignment="Center" Text="HostName = Unknown" FontWeight="Bold"/>
+                    <TextBlock x:Name="tbSharedAccessKeyName" HorizontalAlignment="Right" Text="SharedAccessKeyName = Unknown" FontWeight="Bold"/>
+                </Grid>
+            </Border>
+
+            <TextBox x:Name="tbConnectionString" Grid.Row="1" Grid.Column="0" Height="200" PlaceholderText="[enter IoT Hub connection string]" TextWrapping="Wrap"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="6">
+                <RadioButton x:Name="rbAmqp" GroupName="transportType" Content="AMQP" IsChecked="True"/>
+                <RadioButton x:Name="rbAmqpWeb" GroupName="transportType" Content="AMQP_WEBSOCKET_ONLY"/>
+            </StackPanel>
+
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Create Service Client From Connection String" Click="btnCreate_Click"/>
         </Grid>
     </Grid>
 </Page>
