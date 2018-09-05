@@ -14,13 +14,32 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="Select your device: " Margin="6"/>
-                <ComboBox x:Name="cbDevices" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Select your device: " Margin="6"/>
+            <ComboBox x:Name="cbDevices" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="6"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Configure endpoint: " Margin="6" VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <TextBox x:Name="tb1" Width="300" Margin="6" PlaceholderText="[Event Hub compatible name]"/>
+                <TextBox x:Name="tb2" Width="300" Margin="6" PlaceholderText="[Event Hub compatible endpoint]"/>
+                <Button Content="Update" Click="btnUpdate"/>
             </StackPanel>
-            <TextBox x:Name="tbOutput" Grid.Row="1" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Margin="6" Text="[Device-to-Cloud messages will be displayed here]"/>
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock Foreground="Red" Text="This extra configuration step is needed because of a missing API in the .NET SDK " FontSize="12" Margin="6" VerticalAlignment="Center"/>
+                <HyperlinkButton FontSize="12" Content="Issue #167"  VerticalAlignment="Center" NavigateUri="https://github.com/Azure/azure-event-hubs-dotnet/issues/167"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock Foreground="Red" Text="File upload notifications won't be received due to " Margin="6" FontSize="12" VerticalAlignment="Center"/>
+                <HyperlinkButton FontSize="12" Content="Issue #610" VerticalAlignment="Center" NavigateUri="https://github.com/Azure/azure-iot-sdk-csharp/issues/610"/>
+            </StackPanel>
+            <TextBox x:Name="tbOutput" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" Margin="6" Text="[Device-to-Cloud messages will be displayed here]"/>
         </Grid>
     </Grid>
 </Page>

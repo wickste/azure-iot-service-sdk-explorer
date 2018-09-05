@@ -14,7 +14,37 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
-            <TextBlock FontSize="40" Foreground="Orange" Text="TBD - saving this one for the sequel ..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Select your device: " Margin="6"/>
+            <ComboBox x:Name="cbDevices" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="6"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Message: " Margin="6" VerticalAlignment="Center"/>
+            <TextBox x:Name="tb1" Grid.Row="1" Grid.Column="1" Width="200" Margin="6" PlaceholderText="[message]" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Property1: " Margin="6" VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                <TextBox x:Name="tbKey1"  TextWrapping="Wrap" Margin="6" PlaceholderText="[key]" Width="300"/>
+                <TextBox x:Name="tbValue1"  TextWrapping="Wrap" Margin="6" PlaceholderText="[value]" Width="300"/>
+            </StackPanel>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Property2: " Margin="6" VerticalAlignment="Center"/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                <TextBox x:Name="tbKey2"  TextWrapping="Wrap" Margin="6" PlaceholderText="[key]" Width="300"/>
+                <TextBox x:Name="tbValue2"  TextWrapping="Wrap" Margin="6" PlaceholderText="[value]" Width="300"/>
+            </StackPanel>
+            <Button Grid.Row="4" HorizontalAlignment="Left" Content="Send Message" Click="btnSend_Click" Margin="6"/>
+            <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock Foreground="Red" Text="Functionality blocked due to " Margin="6" FontSize="12" VerticalAlignment="Center"/>
+                <HyperlinkButton FontSize="12" Content="Issue #612" VerticalAlignment="Center" NavigateUri="https://github.com/Azure/azure-iot-sdk-csharp/issues/612"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

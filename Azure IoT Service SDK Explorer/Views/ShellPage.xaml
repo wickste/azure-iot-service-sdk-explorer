@@ -18,9 +18,9 @@
         Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
         <NavigationView.MenuItems>
             <NavigationViewItem x:Uid="Shell_Connect" Icon="Link" helpers:NavHelper.NavigateTo="views:ConnectPage" />
-            <NavigationViewItem x:Uid="Shell_Monitor" Icon="Zoom" helpers:NavHelper.NavigateTo="views:MonitorPage" />
             <NavigationViewItem x:Uid="Shell_Call" Icon="Phone" helpers:NavHelper.NavigateTo="views:CallPage" />
             <NavigationViewItem x:Uid="Shell_Send" Icon="Download" helpers:NavHelper.NavigateTo="views:SendPage" />
+            <NavigationViewItem x:Uid="Shell_Monitor" Icon="Zoom" helpers:NavHelper.NavigateTo="views:MonitorPage" />
             <NavigationViewItem x:Uid="Shell_Manage" Icon="Manage" helpers:NavHelper.NavigateTo="views:ManagePage" />
         </NavigationView.MenuItems>
         <NavigationView.HeaderTemplate>

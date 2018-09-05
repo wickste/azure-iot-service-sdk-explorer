@@ -12,6 +12,22 @@
         Margin="{StaticResource MediumLeftRightMargin}">
         <Grid
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-        </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Select your device: " Margin="6"/>
+            <ComboBox x:Name="cbDevices" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="6"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Method name: " Margin="6" VerticalAlignment="Center"/>
+            <TextBox x:Name="tb1" Grid.Row="1" Grid.Column="1" Width="200" Margin="6" PlaceholderText="[MethodName]" HorizontalAlignment="Left"/>
+            <TextBox x:Name="tbBody" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Height="200" TextWrapping="Wrap" Margin="6" Text=" { 'MethodPayload': 'Payload' }"/>
+            <Button Grid.Row="3" HorizontalAlignment="Left" Content="Call Method" Click="btnCall_Click" Margin="6"/>
+        </Grid> 
     </Grid>
 </Page>
