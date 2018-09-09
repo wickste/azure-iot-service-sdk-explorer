@@ -24,7 +24,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Select your device: " Margin="6"/>
-            <ComboBox x:Name="cbDevices" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="6"/>
+            <ComboBox x:Name="cbDevices" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="6" PlaceholderText="[select your IoT device]">
+                <ComboBoxItem Content="[not connected]"/>
+            </ComboBox>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Configure endpoint: " Margin="6" VerticalAlignment="Center"/>
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                 <TextBox x:Name="tb1" Width="300" Margin="6" PlaceholderText="[Event Hub compatible name]"/>

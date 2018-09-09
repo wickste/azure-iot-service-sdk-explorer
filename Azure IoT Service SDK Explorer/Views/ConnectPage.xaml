@@ -35,7 +35,7 @@
                 <RadioButton x:Name="rbAmqpWeb" GroupName="transportType" Content="AMQP_WEBSOCKET_ONLY"/>
             </StackPanel>
 
-            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Create Service Client From Connection String" Click="btnCreate_Click"/>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Create IoT Hub Service Client from Connection String" Click="btnCreate_Click"/>
         </Grid>
     </Grid>
 </Page>
