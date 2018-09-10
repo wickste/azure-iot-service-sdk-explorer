@@ -12,9 +12,52 @@
         Margin="{StaticResource MediumLeftRightMargin}">
         <Grid
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
-            <TextBlock FontSize="40" Foreground="Orange" Text="TBD - saving this one for the sequel ..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBox x:Name="tbName" Width="220" PlaceholderText="[Id for Device to be created]" Margin="6"/>
+                <Button Content="Create Device" Margin="6" Click="btnCreate_Click"/>
+                <Button Content="Delete Selected Device" Margin="6" Click="Button_Click"/>
+                <Button Content="Refresh" Margin="6" Click="btnRefresh_Click"/>
+            </StackPanel>
+            <Border Grid.Row="1" BorderBrush="{ThemeResource SystemControlForegroundAccentBrush}" BorderThickness="2" Padding="2" Margin="0,0,0,6">
+            <ListView x:Name="lvDevices" >
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Device Name" Margin="3" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1" Text="ConnectionState" Margin="3" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="2" Text="Status" Margin="3" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="3" Text="CloudToDeviceMessageCount" Margin="3" FontWeight="Bold"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Id}" Margin="3"/>
+                            <TextBlock Grid.Column="1" Text="{Binding ConnectionState}" Margin="3"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Status}" Margin="3"/>
+                            <TextBlock Grid.Column="3" Text="{Binding CloudToDeviceMessageCount}" Margin="3"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </Border>
         </Grid>
     </Grid>
 </Page>

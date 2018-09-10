@@ -193,4 +193,8 @@
     <value>parameter must be an Enum name!</value>
     <comment>Parameter must be an Enum name in enum to boolean converter</comment>
   </data>
+  <data name="Shell_Twin.Content" xml:space="preserve">
+    <value>Twin</value>
+    <comment>Navigation view item name for Twin</comment>
+  </data>
 </root>

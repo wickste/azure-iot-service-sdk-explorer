@@ -22,6 +22,7 @@
             <NavigationViewItem x:Uid="Shell_Send" Icon="Download" helpers:NavHelper.NavigateTo="views:SendPage" />
             <NavigationViewItem x:Uid="Shell_Monitor" Icon="Zoom" helpers:NavHelper.NavigateTo="views:MonitorPage" />
             <NavigationViewItem x:Uid="Shell_Manage" Icon="Manage" helpers:NavHelper.NavigateTo="views:ManagePage" />
+            <NavigationViewItem x:Uid="Shell_Twin" Icon="People" helpers:NavHelper.NavigateTo="views:TwinPage" />
         </NavigationView.MenuItems>
         <NavigationView.HeaderTemplate>
             <DataTemplate>
