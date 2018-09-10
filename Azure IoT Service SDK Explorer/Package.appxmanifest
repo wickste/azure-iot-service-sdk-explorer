@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio" IgnorableNamespaces="uap mp genTemplate">
-  <Identity Name="17855StefanWick.AzureIoTServiceSDKExplorer" Publisher="CN=1913355A-B6E7-49A5-822D-9E131A0518BE" Version="1.2.8.0" />
+  <Identity Name="17855StefanWick.AzureIoTServiceSDKExplorer" Publisher="CN=1913355A-B6E7-49A5-822D-9E131A0518BE" Version="1.2.10.0" />
   <mp:PhoneIdentity PhoneProductId="07a72379-7c63-4a7a-8ec7-21395df965b6" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Azure IoT Service SDK Explorer</DisplayName>

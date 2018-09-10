@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    Style="{StaticResource PageStyle}"
     NavigationCacheMode="Required"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -14,7 +15,25 @@
         Margin="{StaticResource MediumLeftRightMargin}">
         <Grid
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <TextBlock FontSize="40" Foreground="Orange" Text="TBD - saving this one for the sequel ..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="cbDevices" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="6" PlaceholderText="[select your IoT device]" SelectionChanged="cbDevices_SelectionChanged">
+                <ComboBoxItem Content="[not connected]"/>
+            </ComboBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Device Twin Properties"/>
+            <TextBox x:Name="tbTwin" Grid.Row="2" Grid.Column="0" IsReadOnly="True" TextWrapping="Wrap"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock  Text="Author new desired property (json)" VerticalAlignment="Center" Margin="3"/>
+                <Button Content="Update Device Twin" Click="btnUpdate_Click" Margin="3"/>
+            </StackPanel>
+            <TextBox x:Name="tbNew" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap"/>
         </Grid>
     </Grid>
 </Page>
