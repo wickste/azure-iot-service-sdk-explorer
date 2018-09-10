@@ -28,12 +28,12 @@
                 <ComboBoxItem Content="[not connected]"/>
             </ComboBox>
             <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Device Twin Properties"/>
-            <TextBox x:Name="tbTwin" Grid.Row="2" Grid.Column="0" IsReadOnly="True" TextWrapping="Wrap"/>
+            <TextBox x:Name="tbTwin" Grid.Row="2" Grid.Column="0" IsReadOnly="True" TextWrapping="Wrap" Margin="6"/>
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                 <TextBlock  Text="Author new desired property (json)" VerticalAlignment="Center" Margin="3"/>
                 <Button Content="Update Device Twin" Click="btnUpdate_Click" Margin="3"/>
             </StackPanel>
-            <TextBox x:Name="tbNew" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap"/>
+            <TextBox x:Name="tbNew" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Margin="6"/>
         </Grid>
     </Grid>
 </Page>

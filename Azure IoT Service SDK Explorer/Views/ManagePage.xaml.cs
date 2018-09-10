@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -87,11 +87,19 @@ namespace Azure_IoT_Service_SDK_Explorer.Views
 
         private async void btnCreate_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Device device = new Device(tbName.Text);
-            await registryManager.AddDeviceAsync(device);
+            try
+            {
+                Device device = new Device(tbName.Text);
+                await registryManager.AddDeviceAsync(device);
 
-            lvDevices.Items.Clear();
-            UpdateDeviceList();
+                lvDevices.Items.Clear();
+                UpdateDeviceList();
+            }
+            catch (Exception exc)
+            {
+                MessageDialog dlg = new MessageDialog(exc.ToString(), "ERROR");
+                await dlg.ShowAsync();
+            }
         }
     }
 }
